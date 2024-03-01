@@ -37,6 +37,26 @@ function randomIntFromInterval(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
+function testWord() {
+    test.classList.toggle('print')
+    let i = 0
+    i = randomIntFromInterval(0, (myItems.length - 1))
+    word.innerHTML = myItems[i].original
+    submit.addEventListener('click', function() {
+        if (submittedWord.value === myItems[i].translation){
+            console.log("Bonne réponse");
+            i = randomIntFromInterval(0, (myItems.length - 1))
+            word.innerHTML = myItems[i].original
+            submittedWord.value = ""
+        }
+        else {
+            console.log("Mauvaise réponse")
+            submittedWord.value = ""
+        }
+        
+    })
+}
+
 send.addEventListener('click', function(){
     if (original.value === '' || translation.value === '') {
         error.innerHTML = `Entrez un mot et sa traduction, svp!`
@@ -62,22 +82,15 @@ erase.addEventListener('click', function() {
     calculateNbWords (myItems)
 })
 
+submittedWord.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        
+        console.log("vous avez cliqué");
+    }
+})
+
 apply.addEventListener('click', function() {
-    test.classList.toggle('print')
-    let i = 0
-    i = randomIntFromInterval(0, (myItems.length - 1))
-    word.innerHTML = myItems[i].original
-    submit.addEventListener('click', function() {
-        if (submittedWord.value === myItems[i].translation){
-            console.log("Bonne réponse");
-            i = randomIntFromInterval(0, (myItems.length - 1))
-            word.innerHTML = myItems[i].original
-        }
-        else {
-            console.log("Mauvaise réponse")
-        }
-        submittedWord.value = ""
-    })
+    testWord();
 })
 
 cross.addEventListener('click', function() {
