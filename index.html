@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="img/book1.ico">
   <link rel="stylesheet" href="styles/style.min.css">
   <title>Exercice Vocabulol</title>
 </head>
@@ -13,14 +14,27 @@
     <h2>Ajoutez des mots</h2>
     <div class="field">
       <p>Mot original</p>
-      <input type="text" name="" id="" placeholder="Entrez le mot en français">
+      <input type="text" name="" class="original" placeholder="Entrez le mot en français">
     </div>
     <div class="field">
       <p>Traduction</p>
-      <input type="text" name="" id="" placeholder="Entrez la traduction">
+      <input type="text" name="" class="translation" placeholder="Entrez la traduction">
     </div>
     <div class="error"></div>
-    <p>Il y a mot(s) enregistré(s)</p>
+    <p>Il y a <span></span> mot(s) enregistré(s)</p>
+    <div class="buttons">
+      <button class="send">Envoyer</button>
+      <button class="erase">Effacer la liste en cours</button>
+    </div>
+    <button class="apply">teste tes connaissances</button>
+  </div>
+  <div class="test">
+    <div class="cross">❌</div>
+    <div class="field">
+      <p>Traduis-moi le mot <em></em></p>
+      <input type="text" name="" class="submit-word" placeholder="Entrez la traduction">
+      <button class="submit">Soumettre</button>
+    </div>
   </div>
   <script src="scripts/main.js"></script>
 </body>
